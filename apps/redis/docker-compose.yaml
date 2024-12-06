@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  redis_6379:
+    image: redis:latest
+    container_name: redis_6379
+    ports:
+      - '6379:6379'
+    command: redis-server --port 6379
+    volumes:
+      - redis_6379_data:/data
+
+  redis_6479:
+    image: redis:latest
+    container_name: redis_6479
+    ports:
+      - '6479:6479'
+    command: redis-server --port 6479
+    volumes:
+      - redis_6479_data:/data
+
+volumes:
+  redis_6379_data:
+  redis_6479_data:
